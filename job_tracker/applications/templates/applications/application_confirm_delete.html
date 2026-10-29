@@ -1,0 +1,18 @@
+{% extends "applications/base.html" %}
+
+{% block title %}Delete application | JobTrack{% endblock %}
+
+{% block content %}
+<section class="form-card">
+    <p class="eyebrow">REMOVE APPLICATION</p>
+    <h1>Delete this application?</h1>
+    <p class="muted">This will remove your {{ application.job_role }} application at {{ application.company }}. This action cannot be undone.</p>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-actions">
+            <button class="button button-danger" type="submit">Delete application</button>
+            <a class="button button-secondary" href="{% url 'dashboard' %}">Keep it</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

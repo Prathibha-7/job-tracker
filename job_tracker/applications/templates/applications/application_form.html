@@ -1,0 +1,19 @@
+{% extends "applications/base.html" %}
+
+{% block title %}{{ page_title }} | JobTrack{% endblock %}
+
+{% block content %}
+<section class="form-card">
+    <a class="back-link" href="{% url 'dashboard' %}">← Back to applications</a>
+    <p class="eyebrow">APPLICATION DETAILS</p>
+    <h1>{{ page_title }}</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-actions">
+            <button class="button button-primary" type="submit">Save application</button>
+            <a class="button button-secondary" href="{% url 'dashboard' %}">Cancel</a>
+        </div>
+    </form>
+</section>
+{% endblock %}

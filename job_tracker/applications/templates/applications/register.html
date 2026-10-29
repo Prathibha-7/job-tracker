@@ -1,0 +1,17 @@
+{% extends "applications/base.html" %}
+
+{% block title %}Create account | JobTrack{% endblock %}
+
+{% block content %}
+<section class="auth-card">
+    <p class="eyebrow">START YOUR SEARCH</p>
+    <h1>Create your account</h1>
+    <p class="muted">Track every opportunity and keep your next step clear.</p>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="button button-primary button-wide" type="submit">Create account</button>
+    </form>
+    <p class="form-footer">Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+</section>
+{% endblock %}
